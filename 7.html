@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.1.1.min.js"></script>
+	<title>juery Adventures</title>
+</head>
+</html>
+<body>
+	<ul>
+		<li class="vacation">
+			<h2>Hawaiian Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+		<li class="vacation">
+			<h2>Europe Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+		<li class="vacation">
+			<h2>Brasil Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+	</ul>
+</body>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$('.button').on('click', function(){
+			var price = $('<p>From $399.99</p>');
+//			$(this).after(price);
+			$(this).closest('.vacation').append(price);
+			$(this).remove();
+			});
+		});
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.1.1.min.js"></script>
+	<title>juery Adventures</title>
+</head>
+</html>
+<body>
+
+<ul>
+	<li class="vacation"> Viagem A
+		<a href="#" class="extend">Show Comments</a>
+		<ul class="comments">
+			<li>comentario A</li>
+			<li>comentario B</li>
+		</ul>
+	</li>
+</ul>
+
+<ul>
+	<li class="vacation"> Viagem B
+		<a href="#" class="extend">Show Comments</a>
+		<ul class="comments">
+			<li>comentario A</li>
+			<li>comentario B</li>
+		</ul>
+	</li>
+</ul>
+
+<ul>
+	<li class="vacation"> Viagem C
+		<a href="#" class="extend">Show Comments</a>
+		<ul class="comments">
+			<li>comentario A</li>
+			<li>comentario B</li>
+		</ul>
+	</li>
+</ul>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.vacation').on('click', '.extend', function(event){
+//find the comments ul
+//show the comments ul
+			event.preventDefault();
+			    //event.stopPropagation();
+			$(this).closest('.vacation')
+					.find('.comments')
+					.fadeToggle();
+		});
+	});
+</script>
+<style>
+.comments{display: none;}
+</style>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.1.1.min.js"></script>
+	<title>juery Adventures</title>
+</head>
+</html>
+<body>
+
+<div id="filters">
+<button class="onsale-filter">On Sale Now</button>
+<button class="expiring-filter">Expiring</button>
+</div>
+
+	<ul>
+		<li class="vacation onsale" data-price='399.99'>
+			<h2>Hawaiian Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+		<li class="vacation expiring" data-price='299.99'>
+			<h2>Europe Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+		<li class="vacation onsale" data-price='199.99'>
+			<h2>Brasil Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+
+		<li class="another" data-price='99.99'>
+			<h2>Another Vacation</h2>
+			<input type="button" class="button" value="Get Price">
+		</li>
+	</ul>
+</body>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$('.vacation').on('click', '.button', function(){
+			var vacation = $(this).closest('.vacation');
+			var amout = vacation.data('price');
+			var price = $('<p>From $'+amout+'</p>');
+			vacation.append(price);
+			$(this).remove();
+			});
+
+			$('#filters').on('click', '.onsale-filter', function(){
+				//find all vacations that are on-sale
+				//add a class to these vacations
+				$('.highlighted').removeClass('highlighted');
+				$('.vacation').filter('.onsale').addClass('highlighted');
+			});
+
+			$('#filters').on('click', '.expiring-filter', function(){
+				//find all vacations that are on-sale
+				//add a class to these vacations
+				$('.highlighted').removeClass('highlighted');
+				$('.vacation').filter('.expiring').addClass('highlighted');
+			});
+		});
+</script>
+<style>
+.highlighted { background-color:#FFFF00; }
+</style>
+</html>

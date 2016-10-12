@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.1.1.min.js"></script>
+	<title>juery Adventures</title>
+</head>
+</html>
+<body>
+
+<div>
+jQuery Air Atlantic - Vacation Confirmation
+</div>
+
+	<li class="confirmation">
+		<h3>Show info</h3>
+		<button>FLIGHT DETAILS</button> 
+		<ul class="ticket">
+		<p>Hawaiian Vacation</p>
+		<p>Paid $399.99 on January 14, 2015</p>
+		</ul>
+	</li>
+	
+</body>
+<script type="text/javascript">
+		function showTicket(){
+			$(this).closest('.confirmation').find('.ticket').slideDown();
+		}
+		$(document).ready(function(){
+			$('.confirmation').on('click', 'button', showTicket);
+			$('.confirmation').on('mouseenter', 'h3', showTicket);
+		});
+</script>
+<style>
+.ticket { display: none; }
+</style>
+</html>
