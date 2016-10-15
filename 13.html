@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.1.1.min.js"></script>
+	<title>juery Adventures</title>
+</head>
+</html>
+<body>
+<div id="vacations">
+	<ul>
+		<li class="vacation"> Viagem A
+			<p class="price">399.99</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li class="vacation"> Viagem B
+		<p class="price">399.99</p>
+	</ul>
+
+	<ul>
+		<li class="vacation"> Viagem C
+		<p class="price">399.99</p>
+	</ul>
+
+</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#vacations').on('click', '.vacation', function(){
+			$(this).addClass('highlighted');
+			//    $(this).css({'background-color' : '#252b30',
+            //     'font-weight' : 'bold'});
+            //$(this).find('.price').show();
+
+		});
+		$('#vacations').on('mouseleave', '.vacation', function() {
+    		$(this).removeClass('highlighted');
+  		});
+	});
+</script>
+<style>
+.highlighted{
+	background-color: #563;
+	border-color: 1px solid#967.
+}
+.highlighted .price{display: block;}
+.price{display: none;}
+</style>
+</html>
